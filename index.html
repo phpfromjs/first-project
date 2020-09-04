@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Poem Maker Pro</title></head>
+    <body>
+        <h1>Enter terms below.</h1>
+        <form method="post" action="/poem">
+        <p>Plural noun<br><input type="text" name="noun1"></p>
+        <p>Singular noun<br><input type="text" name="noun2"></p>
+        <p>Verb (past tense)<br><input type="text" name="verb"></p>
+        <p>Noun<br><input type="text" name="noun3"></p>
+        <input type="submit">
+        </form>
+        <p>{{list}}</p>
+        {% for item in list %}
+            <p>{{item}}</p>
+        {% end %}
+        <br>
+        {% for index, item in enumerate(list)%}
+            <p>list[{{index}}] is {{item}}</p>
+            {% if item == 'python' or item == 'php' %}
+                <p>{{item}} is the bast in the word</p>
+            {% end %}
+        {% end %}
+    </body>
+</html>
